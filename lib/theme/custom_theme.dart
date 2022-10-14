@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:knight_and_day_2/theme/colors.dart';
 
-class CustomTheme {
+class CustomTheme with ChangeNotifier {
+  static bool _isDarkTheme = true;
+  ThemeMode get currentTheme => _isDarkTheme ? ThemeMode.dark : ThemeMode.light;
+
+  void toogleTheme() {
+    _isDarkTheme = !_isDarkTheme;
+    notifyListeners();
+  }
+
   static ThemeData lightTheme = ThemeData(
       brightness: Brightness.light,
       primarySwatch: const MaterialColor(0xFF6002EE, <int, Color>{

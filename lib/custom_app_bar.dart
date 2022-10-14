@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:knight_and_day_2/theme/config.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
@@ -12,7 +13,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       actions: [
         IconButton(
           icon: const Icon(Icons.brightness_4),
-          onPressed: () => {},
+          onPressed: () => currentTheme.toogleTheme(),
         )
       ],
     );
