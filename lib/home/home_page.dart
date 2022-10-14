@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:knight_and_day_2/home/bar_chart.dart';
-import 'package:knight_and_day_2/theme/colors.dart';
 
 import '../custom_app_bar.dart';
 
@@ -34,7 +33,10 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 32.0,
           ),
-          Text("You've done $totalActivities activities in total"),
+          Text(
+            "You've done $totalActivities activities in total",
+            style: Theme.of(context).textTheme.headline2,
+          ),
           const SizedBox(
             height: 32.0,
           ),
@@ -42,33 +44,18 @@ class _HomePageState extends State<HomePage> {
             onPressed: () => setState(() {
               _joustCounter++;
             }),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: CustomColors.lightPurple,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0)),
-            ),
             child: const Text("Joust"),
           ),
           ElevatedButton(
             onPressed: () => setState(() {
               _breakCounter++;
             }),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: CustomColors.lightPurple,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0)),
-            ),
             child: const Text("Take break"),
           ),
           ElevatedButton(
             onPressed: () => setState(() {
               _patrolCounter++;
             }),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: CustomColors.lightPurple,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0)),
-            ),
             child: const Text("Patrol"),
           ),
         ],

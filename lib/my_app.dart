@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:knight_and_day_2/theme/custom_theme.dart';
 
 import 'home/home_page.dart';
 
@@ -7,9 +8,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Knight and Day',
-      home: HomePage(),
+      home: const HomePage(),
+      theme: CustomTheme.lightTheme,
+      darkTheme: CustomTheme.darkTheme,
+      themeMode: ThemeMode.light,
     );
   }
 }
