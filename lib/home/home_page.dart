@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:knight_and_day_2/home/bar_chart.dart';
+import 'package:knight_and_day_2/theme/colors.dart';
 
 import '../custom_app_bar.dart';
 
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     final totalActivities = _joustCounter + _breakCounter + _patrolCounter;
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Knight and Day',
+        title: 'Knight and Day 2',
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -38,22 +39,37 @@ class _HomePageState extends State<HomePage> {
             height: 32.0,
           ),
           ElevatedButton(
-            child: const Text("Joust"),
             onPressed: () => setState(() {
               _joustCounter++;
             }),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: CustomColors.lightPurple,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0)),
+            ),
+            child: const Text("Joust"),
           ),
           ElevatedButton(
-            child: const Text("Take break"),
             onPressed: () => setState(() {
               _breakCounter++;
             }),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: CustomColors.lightPurple,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0)),
+            ),
+            child: const Text("Take break"),
           ),
           ElevatedButton(
-            child: const Text("Patrol"),
             onPressed: () => setState(() {
               _patrolCounter++;
             }),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: CustomColors.lightPurple,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0)),
+            ),
+            child: const Text("Patrol"),
           ),
         ],
       ),
